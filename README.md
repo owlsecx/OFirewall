@@ -18,7 +18,7 @@
 
 ## 📌 Overview
 
-Offline firewall ruleset auditor (iptables / nftables / ufw / firewalld)
+OFirewall — Offline Firewall Ruleset Auditor. It provides tolerant parsers for iptables-save / ip6tables-save, nft list ruleset (incl. named sets), ufw (user.rules, /etc/default/ufw, ufw.conf, `ufw status verbose`) and firewalld (zone XML, firewalld.conf, --list-all).
 
 ---
 
@@ -30,12 +30,6 @@ Offline firewall ruleset auditor (iptables / nftables / ufw / firewalld)
 - ANY/ANY accept and exposed admin-port detection (SSH, RDP, VNC, DB, Docker, k8s, SMB, SNMP ...)
 - Shadowed / redundant / conflicting rule analysis using rule-space subsumption & overlap logic
 - Default-policy, missing-logging, ordering, loopback, conntrack, ICMP/ICMPv6, IPv6-parity, NAT checks
-- Weighted A+…F grade with per-category subscores
-- Hardening suggestions with CIS / NIST references
-- Exports: TXT / Markdown / JSON / CSV / SARIF 2.1.0
-- Optional read-only live capture (iptables-save, nft list ruleset) — never modifies the firewall
-- Built-in insecure demo rulesets for self-test
-- Full CLI mode (--path, --fail-on, --min-severity ...)
 
 ---
 
@@ -49,7 +43,10 @@ Offline firewall ruleset auditor (iptables / nftables / ufw / firewalld)
 ## 🚀 Usage
 
 ```bash
-./OFirewall
+./OFirewall                                     # interactive menu
+./OFirewall --path ./config_or_ruleset
+./OFirewall --demo
+./OFirewall --help
 ```
 
 ---
